@@ -9,7 +9,7 @@ node_modules
 logs
 *.log
 
-# Misc
+# Misc.
 .DS_Store
 
 # Local env files
