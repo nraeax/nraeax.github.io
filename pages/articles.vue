@@ -14,6 +14,8 @@
       :title="post.title" 
       :href="post._path" 
       :date="post.publishDate"
+      :src="post.featuredImage.url"
+      :alt="post.featuredImage.title"
     />
   </div>
 </template>
