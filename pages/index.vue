@@ -1,9 +1,11 @@
 <script setup lang="ts">
   definePageMeta({
-    title: 'Home'
+    title: 'Home',
+    description: 'Lorem'
   })
 </script>
 
 <template>
-	<PageTitle/>
+  <PageHeader/>
+  <p>Some content</p>
 </template>

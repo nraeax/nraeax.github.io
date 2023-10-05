@@ -1,5 +1,5 @@
 ---
-title: Article 2
+title: Article 6
 description: A timeless programmer introduction to new concepts
 summary: An introductory blog post
 category: category1
@@ -10,8 +10,8 @@ author:
 featuredImage:
   url: /images/featured-image.jpg
   title: hello world
-publishDate: 04 Mar 2023
-publishDateTime: 2023-03-04:17:30
+publishDate: 2 Oct 2023
+publishDateTime: 2023-10-02:17:30
 ---
 
 This is a classic programmers introduction to new concepts.
@@ -28,5 +28,3 @@ Just write the content in Markdown and we'll let Nuxt take care of the rest of t
 * Vue 3
 * Typescript
 * A dash of lime!
-
-![Picture of cocktail](images/nice-cocktail.jpg)

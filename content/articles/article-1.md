@@ -1,7 +1,9 @@
 ---
 title: Article 1
 description: A timeless programmer introduction to new concepts
-summary:  An introductory blog post
+summary: An introductory blog post
+category: category1
+tags: vue3, nuxt3
 author:
   name: Natalie Andrews
   github: nraeax

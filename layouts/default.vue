@@ -2,7 +2,7 @@
   <div>
     <Header/>
     <main>
-      <div class="container mx-auto">
+      <div class="container mt-16 mb-16 mx-auto">
         <slot />
       </div>
     </main>

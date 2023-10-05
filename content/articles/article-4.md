@@ -2,14 +2,16 @@
 title: Article 4
 description: A timeless programmer introduction to new concepts
 summary:  An introductory blog post
+category: category1
+tags: vue3, nuxt3
 author:
   name: Natalie Andrews
   github: nraeax
 featuredImage:
   url: /images/featured-image.jpg
   title: hello world
-publishDate: 19 June 2023
-publishDateTime: 2023-06-19:17:30
+publishDate: 21 Aug 2023
+publishDateTime: 2023-08-21:17:30
 ---
 
 This is a classic programmers introduction to new concepts.
