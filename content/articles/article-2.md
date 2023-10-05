@@ -5,9 +5,9 @@ summary:  An introductory blog post
 author:
   name: Natalie Andrews
   github: nraeax
-featureImage:
+featuredImage:
   url: /images/featured-image.jpg
-  title: Featured image
+  title: hello world
 publishDate: 04 March 2023
 publishDateTime: 2023-03-04:17:30
 ---
