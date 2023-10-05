@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
-  content: {},
+
   modules: [
     '@nuxt/content',
     '@nuxtjs/color-mode',

@@ -8,14 +8,12 @@
 
 <template>
   <PageTitle/>
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4 xl:gap-12">
-    <div v-for="post in posts">
-      <a :href="post._path">
-        <img :src="post.featureImage.url" :alt="post.featureImage.title" />
-        <h2>{{ post.title }}</h2>
-        <time :datetime="post.publishDate">{{ post.publishDate }}</time>
-        <p>{{ post.description }}</p>
-      </a>
-    </div>
+  <div class="grid grid-cols-4 gap-8">
+    <Card 
+      v-for="post in posts" 
+      :title="post.title" 
+      :href="post._path" 
+      :date="post.publishDate"
+    />
   </div>
 </template>
