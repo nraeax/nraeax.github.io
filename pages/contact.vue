@@ -1,3 +1,9 @@
+<script setup lang="ts">
+  definePageMeta({
+    title: 'Contact'
+  })
+</script>
+
 <template>
-	<div>Contact</div>
+	<PageTitle/>
 </template>
