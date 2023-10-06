@@ -2,7 +2,7 @@
 title: Article 5
 description: A timeless programmer introduction to new concepts
 summary: An introductory blog post
-category: category1
+category: Vue 3
 tags: vue3, nuxt3
 author:
   name: Natalie Andrews
