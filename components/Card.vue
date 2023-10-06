@@ -1,13 +1,12 @@
 <script setup lang="ts">
-
   const props = defineProps({
     href: String,
     title: String,
     date: String,
     src: String,
-    alt: String
+    alt: String,
+    categories: Array
   })
-
 </script>
 
 <template>

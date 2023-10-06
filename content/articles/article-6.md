@@ -1,5 +1,5 @@
 ---
-title: Article 1
+title: Article 6
 description: A timeless programmer introduction to new concepts
 summary: An introductory blog post
 category: Nuxt 3
@@ -10,8 +10,8 @@ author:
 featuredImage:
   url: /images/featured-image.jpg
   title: hello world
-publishDate: 01 Jan 2023
-publishDateTime: 2023-01-01:17:30
+publishDate: 2 Oct 2023
+publishDateTime: 2023-10-02:17:30
 ---
 
 This is a classic programmers introduction to new concepts.
