@@ -1,29 +1,38 @@
-<script setup lang="ts">
-	const { data: articles } = await useAsyncData('article', () => queryContent('/articles').find())
-	const route = useRoute()
-	const router = useRouter()
-	const fullPath = route.path
-	
-	const requestPath = fullPath.startsWith("/")
-    ? fullPath.substring(1)
-    : fullPath;
+<script setup>
+const router = useRouter()
+const { siteUrl } = useAppConfig()
+const breadcrumbs = computed(() => {
 
-  const crumbs = requestPath.split("/");
-  const breadcrumbs = [];
-  let path = "";
+  const { fullPath } = useRoute()
 
-  crumbs.forEach((crumb) => {
-    if (crumb) {
-      path = `${path}/${crumb}`;
-      const breadcrumb = crumb // This line doesn't work
-      if (breadcrumb) {
-      	breadcrumbs.push(breadcrumb)
-      }
-    }
-  });
+  let params = fullPath.startsWith('/')
+    ? fullPath.substring(1).split('/')
+    : fullPath.split('/')
 
-  // const breadcrumb = router.getRoutes().find((r) => r.path === path);
+  params = params.filter(v => v)
+  const crumbs = []
+  let path = ''
+  let title = ''
 
+  params.forEach((param, index) => {
+    path = `${path}/${param}`
+    title = titleCase(param.replace(/-/g, ' '))
+
+    crumbs.push({
+      name: title,
+      ...(index != (params.length - 1) && {
+        item: `${path}${path.match(/\/$/) ? '' : '/'}`
+      })
+    })
+  })
+  return crumbs
+})
+
+function titleCase(str) {
+  return str.toLowerCase().split(' ').map(word => {
+    return (word.charAt(0).toUpperCase() + word.slice(1))
+  }).join(' ')
+}
 </script>
 
 <template>
@@ -34,22 +43,26 @@
 			<div class="container mx-auto py-16">
 
 				<!-- Breadcrumbs -->
-				<div class="mb-4 flex items-center">
-					<div class="bg-white/10 w-7 h-7 flex justify-center mr-4">
+				<div class="flex items-center">
+					<div class="bg-white/10 w-7 h-7 flex justify-center">
 						<NuxtLink class="flex items-center justify-center" to="/"><Icon name="heroicons:home-20-solid" class="h-5 w-5"/></NuxtLink>
 					</div>
-					<ul class="flex gap-4">
-						<li v-for="breadcrumb in breadcrumbs" :key="index">
-
-			          {{ breadcrumb }}
-
-						</li>
-					</ul>
+					<ul v-for="(item, key) in breadcrumbs" :key="key">
+	          <li class="flex items-center flex-shrink-0 text-sm">
+	          	<span class="h-7 w-7 flex items-center justify-center">
+	              	<Icon name="heroicons:chevron-right-20-solid"/>
+	              </span>
+	            <div v-if="item.item">
+	              <NuxtLink :to="item.item" class="font-semibold hover:underline">{{ item.name }}</NuxtLink>
+	            </div>
+	            <span v-else>{{ item.name }}</span>
+	          </li>
+	        </ul>
 				</div>
 
 				<div class="w-full lg:w-1/2">
-					<h1>{{ doc.title }}</h1>
-					<p>{{ doc.description }}</p>
+					<h1 class="mt-4">{{ doc.title }}</h1>
+					<p class="mt-8 mb-0">{{ doc.publishDate }}</p>
 				</div>
 			</div>
 		</header>
