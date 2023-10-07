@@ -1,4 +1,5 @@
 <script setup lang="ts">
+	const { data: articles } = await useAsyncData('article', () => queryContent('/articles').find())
 	const route = useRoute()
 	const router = useRouter()
 	const fullPath = route.path
@@ -12,11 +13,16 @@
   let path = "";
 
   crumbs.forEach((crumb) => {
-  	if (crumb) {
-  		path = `${path}/${crumb}`;
-  		console.log(crumb)
-  	}
-  })
+    if (crumb) {
+      path = `${path}/${crumb}`;
+      const breadcrumb = crumb // This line doesn't work
+      if (breadcrumb) {
+      	breadcrumbs.push(breadcrumb)
+      }
+    }
+  });
+
+  // const breadcrumb = router.getRoutes().find((r) => r.path === path);
 
 </script>
 
@@ -29,14 +35,14 @@
 
 				<!-- Breadcrumbs -->
 				<div class="mb-4 flex items-center">
-					<div class="bg-black w-7 h-7 flex items-center justify-center mr-4">
-						<NuxtLink to="/"><Icon name="heroicons:home-20-solid"/></NuxtLink>
+					<div class="bg-white/10 w-7 h-7 flex justify-center mr-4">
+						<NuxtLink class="flex items-center justify-center" to="/"><Icon name="heroicons:home-20-solid" class="h-5 w-5"/></NuxtLink>
 					</div>
 					<ul class="flex gap-4">
-						<li v-for="(breadcrumb, index) in breadcrumbs" :key="index">
-						 <NuxtLink :to="breadcrumb.path">
-		          {{ breadcrumb.meta.title }}
-		        </NuxtLink>
+						<li v-for="breadcrumb in breadcrumbs" :key="index">
+
+			          {{ breadcrumb }}
+
 						</li>
 					</ul>
 				</div>
