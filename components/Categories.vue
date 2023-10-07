@@ -7,7 +7,7 @@
 
 <template>
 	<aside class="col-span-3">
-		<h2 class="mb-6">Categories</h2>
+		<h3 class="mb-6">Categories</h3>
 		<ul>
 			<li 
 				v-for="(category, index) in allCategories" 

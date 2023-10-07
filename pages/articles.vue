@@ -5,12 +5,13 @@
     description: 'A bunch of articles about code'
   })
   
-  const {data: posts } = await useAsyncData('posts', () => queryContent('/articles').find());
+  const {data: posts } = await useAsyncData('posts', () => queryContent('/articles').find())
 </script>
 
 <template>
 
   <PageHeader/>
+  <div class="container mx-auto">
 
   <div class="grid grid-cols-12">
     <Sidebar/>
@@ -25,4 +26,5 @@
       />
     </div>
   </div>
+</div>
 </template>

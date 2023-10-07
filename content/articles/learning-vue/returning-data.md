@@ -1,17 +1,17 @@
 ---
-title: A timeless programmer introduction to new concepts
+title: Returning data
 description: A timeless programmer introduction to new concepts
 summary: An introductory blog post
-category: Nuxt 3
-tags: vue3, nuxt3
+category: Vue 3
+tags: vue3
 author:
   name: Natalie Andrews
   github: nraeax
 featuredImage:
   url: /images/featured-image.jpg
   title: hello world
-publishDate: 01 Jan 2023
-publishDateTime: 2023-01-01:17:30
+publishDate: 7 Oct 2023
+publishDateTime: 2023-10-07:05:19
 ---
 
 ## How to write a blog post in Nuxt
