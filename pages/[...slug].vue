@@ -1,24 +1,21 @@
 <script setup lang="ts">
-
 	const route = useRoute()
+	const router = useRouter()
+	const fullPath = route.path
 	
-	const fullPath = route.fullPath
-  const params = fullPath.startsWith('/')
-        ? fullPath.substring(1).split('/')
-        : fullPath.split('/')
-  const crumbs = []
+	const requestPath = fullPath.startsWith("/")
+    ? fullPath.substring(1)
+    : fullPath;
 
-  let path = ''
+  const crumbs = requestPath.split("/");
+  const breadcrumbs = [];
+  let path = "";
 
-  params.forEach((param, index) => {
-    path = `${path}/${param}`
-    const match = route.fullPath.match(path)
-
-		if (match.name !== null) {
-			crumbs.push(match)
-		}
-		console.log(crumbs)
-
+  crumbs.forEach((crumb) => {
+  	if (crumb) {
+  		path = `${path}/${crumb}`;
+  		console.log(crumb)
+  	}
   })
 
 </script>
@@ -29,11 +26,21 @@
 		<!-- ArticleHeader.vue -->
 		<header class="bg-black/20">
 			<div class="container mx-auto py-16">
+
+				<!-- Breadcrumbs -->
 				<div class="mb-4 flex items-center">
 					<div class="bg-black w-7 h-7 flex items-center justify-center mr-4">
-						<Icon name="heroicons:home-20-solid"/>
+						<NuxtLink to="/"><Icon name="heroicons:home-20-solid"/></NuxtLink>
 					</div>
+					<ul class="flex gap-4">
+						<li v-for="(breadcrumb, index) in breadcrumbs" :key="index">
+						 <NuxtLink :to="breadcrumb.path">
+		          {{ breadcrumb.meta.title }}
+		        </NuxtLink>
+						</li>
+					</ul>
 				</div>
+
 				<div class="w-full lg:w-1/2">
 					<h1>{{ doc.title }}</h1>
 					<p>{{ doc.description }}</p>
