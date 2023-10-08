@@ -6,14 +6,7 @@ export default <Partial<Config>>{
   theme: {
     container: {
       center: true,
-    },
-    fontFamily: {
-      display: [
-        '"Sora", sans-serif'
-      ],
-      body: [
-        '"Ubuntu", sans-serif'
-      ]
+
     },
     extend: {
       colors: {
