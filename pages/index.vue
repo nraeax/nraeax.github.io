@@ -6,6 +6,8 @@
 </script>
 
 <template>
-  <PageHeader/>
-  <p>Some content</p>
+  <Hero/>
+  <div class="container">
+    <p>Some content</p>
+  </div>
 </template>

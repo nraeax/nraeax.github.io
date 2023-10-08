@@ -1,6 +1,6 @@
 <template>
 	<header class="bg-black/20">
-		<div class="container mx-auto py-16">
+		<div class="container mx-auto">
 			<div class="mb-4 flex items-center">
 				<div class="bg-black w-7 h-7 flex items-center justify-center mr-4">
 					<Icon name="heroicons:home-20-solid"/>

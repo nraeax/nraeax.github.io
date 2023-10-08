@@ -4,12 +4,18 @@ export default <Partial<Config>>{
   darkMode: 'class',
   jit: true,
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       colors: {
-        'navy': '#191835',
+        'dark': '#24143c',
+        'light': '#eeeff3'
       }
     }, 
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/container-queries'),
+  ],
   content: []
 }

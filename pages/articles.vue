@@ -9,22 +9,20 @@
 </script>
 
 <template>
-
   <PageHeader/>
-  <div class="container mx-auto">
-
-  <div class="grid grid-cols-12">
-    <Sidebar/>
-    <div class="grid grid-cols-3 gap-8 col-span-9">
-      <Card 
-        v-for="post in posts" 
-        :title="post.title" 
-        :href="post._path" 
-        :date="post.publishDate"
-        :src="post.featuredImage.url"
-        :alt="post.featuredImage.title"
-      />
+  <div class="container">
+    <div class="grid grid-cols-12 py-8">
+      <Sidebar/>
+      <div class="grid grid-cols-3 gap-8 col-span-9">
+        <Card 
+          v-for="post in posts" 
+          :title="post.title" 
+          :href="post._path" 
+          :date="post.publishDate"
+          :src="post.featuredImage.url"
+          :alt="post.featuredImage.title"
+        />
+      </div>
     </div>
   </div>
-</div>
 </template>
