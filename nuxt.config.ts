@@ -17,8 +17,13 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
-
+  googleFonts: {
+    families: {
+      Sora: true
+    }
+  },
   modules: [
+    '@nuxtjs/google-fonts',
     '@nuxt/content',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',

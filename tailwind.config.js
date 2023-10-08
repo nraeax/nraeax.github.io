@@ -7,6 +7,11 @@ export default <Partial<Config>>{
     container: {
       center: true,
     },
+    fontFamily: {
+      sans: [
+        '"Sora", sans-serif'
+      ]
+    },
     extend: {
       colors: {
         'dark': '#24143c',
@@ -15,7 +20,6 @@ export default <Partial<Config>>{
     }, 
   },
   plugins: [
-    require('@tailwindcss/container-queries'),
   ],
   content: []
 }
