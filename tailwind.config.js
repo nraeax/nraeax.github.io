@@ -8,8 +8,11 @@ export default <Partial<Config>>{
       center: true,
     },
     fontFamily: {
-      sans: [
+      display: [
         '"Sora", sans-serif'
+      ],
+      body: [
+        '"Ubuntu", sans-serif'
       ]
     },
     extend: {
