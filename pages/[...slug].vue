@@ -39,8 +39,8 @@ function titleCase(str) {
 	<ContentDoc v-slot="{ doc }">
 
 		<!-- ArticleHeader.vue -->
-		<header class="bg-black/20">
-			<div class="container mx-auto py-16">
+		<header class="bg-black/20 py-16">
+			<div class="container mx-auto">
 
 				<!-- Breadcrumbs -->
 				<div class="flex items-center">
@@ -60,17 +60,17 @@ function titleCase(str) {
 	        </ul>
 				</div>
 
-				<div class="w-full lg:w-1/2">
-					<h1 class="mt-4">{{ doc.title }}</h1>
-					<p class="mt-8 mb-0">{{ doc.publishDate }}</p>
+				<div>
+					<h1 class="mt-8">{{ doc.title }}</h1>
+					<p class="mt-8 py-0">{{ doc.publishDate }}</p>
 				</div>
 			</div>
 		</header>
 
 		<main>
-			<div class="container mx-auto py-8">
-				<div class="grid grid-cols-12 gap-16">
-					<div class="col-span-9">
+			<div class="container mx-auto">
+				<div class="grid grid-cols-12 md:gap-16">
+					<div class="col-span-12 md:col-span-9">
 						<ContentRenderer :value="doc" />
 					</div>
 					<div class="col-span-3 sticky top-24 z-40">
