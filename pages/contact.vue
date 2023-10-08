@@ -7,5 +7,7 @@
 
 <template>
   <PageHeader/>
-  <p>Some content</p>
+  <div class="container">
+    <p>Some content</p>
+  </div>
 </template>

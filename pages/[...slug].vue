@@ -44,7 +44,7 @@ function titleCase(str) {
 
 				<!-- Breadcrumbs -->
 				<div class="flex items-center">
-					<div class="bg-white/10 w-7 h-7 flex justify-center">
+					<div class="bg-white/10 w-8 h-8 flex justify-center rounded">
 						<NuxtLink class="flex items-center justify-center" to="/"><Icon name="heroicons:home-20-solid" class="h-5 w-5"/></NuxtLink>
 					</div>
 					<ul v-for="(item, key) in breadcrumbs" :key="key">
@@ -69,17 +69,18 @@ function titleCase(str) {
 
 		<main>
 			<div class="container mx-auto">
-				<div class="grid grid-cols-12 md:gap-16">
+				<div class="grid grid-cols-12 md:gap-16 py-8">
+
 					<div class="col-span-12 md:col-span-9">
 						<ContentRenderer :value="doc" />
 					</div>
-					<div class="col-span-3 sticky top-24 z-40">
 
+					<div class="col-span-3 sticky top-24 z-40">
 						<!-- ArticleSidebar.vue -->
 						<h3>Table of contents</h3>
 						<ul v-if="doc.body.toc && doc.body.toc.links">
 							<li v-for="link in doc.body.toc.links" class="py-1 text-sm">
-								<a :href="`#${link.id}`">
+								<a :href="`#${link.id}`" class="font-medium">
 									{{ link.text }}
 								</a>
 							</li>

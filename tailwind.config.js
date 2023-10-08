@@ -20,7 +20,7 @@ export default <Partial<Config>>{
         'dark': '#24143c',
         'light': '#eeeff3'
       }
-    }, 
+    },
   },
   plugins: [
   ],
