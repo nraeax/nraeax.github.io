@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Sora: [300, 400, 500, 600, 700, 800, 900],
-      Inter: [300, 400]
+      Inter: [300, 400, 500, 600, 700]
     }
   },
   modules: [
