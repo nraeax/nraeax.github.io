@@ -5,8 +5,9 @@
 
 <template>
 	<nav 
-		class="md:flex md:items-center md:justify-between md:gap-6"
-		>
+		class="hidden items-center justify-between gap-8"
+		:class="showMenu ? 'md:flex' : 'hidden'"
+	>
 		<NuxtLink to="/" class="text-sm font-medium" activeClass="text-green-500">Home</NuxtLink>
 		<NuxtLink to="/articles" class="text-sm font-medium" activeClass="text-green-500">Articles</NuxtLink>
 		<NuxtLink to="/projects" class="text-sm font-medium" activeClass="text-green-500">Projects</NuxtLink>

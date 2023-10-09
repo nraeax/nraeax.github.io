@@ -4,10 +4,16 @@
 
 @layer base {
 	html { @apply antialiased; }
-	body { @apply bg-light dark:bg-dark font-light leading-7 text-slate-600 dark:text-white/80 relative tracking-wide; font-family: 'Inter', sans-serif; }
-	h1, h2, h3, h4, h5, h6 { @apply my-2 font-black; font-family: 'Sora', sans-serif; }
+	body { @apply bg-light dark:bg-dark font-light leading-7 text-slate-600 dark:text-white/80 relative; font-family: 'Inter', sans-serif; }
+	h1, h2, h3, h4, h5, h6 { @apply my-2 font-bold; font-family: 'Sora', sans-serif; }
 	h1 { @apply text-5xl; }
 	h2 { @apply text-4xl; }
 	h3 { @apply text-2xl; }
 	p { @apply py-2; }
+}
+
+@layer components {
+	.button { font-family: 'Sora', sans-serif; @apply inline-flex text-sm py-3 px-5 justify-center items-center gap-2 rounded-full border border-transparent font-semibold focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800; }
+	.button--primary { @apply bg-pink-500; }
+	.button--outline { @apply border-solid border-white/20; }
 }

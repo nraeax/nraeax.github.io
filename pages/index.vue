@@ -7,6 +7,7 @@
 
 <template>
   <Hero/>
+  <Features/>
   <div class="container">
     <p>Some content</p>
   </div>
