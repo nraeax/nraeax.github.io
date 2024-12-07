@@ -1,36 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  app: {
-    head: {
-      titleTemplate: 'nraeax/dev',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'A dev blog built with Nuxt 3' }
-      ]
-    }
-  },
-  components: [
-    {
-      path: '~/components',
-      pathPrefix: false,
-    },
-  ],
-  googleFonts: {
-    families: {
-      Sora: [300, 400, 500, 600, 700, 800, 900],
-      Inter: [300, 400, 500, 600, 700]
-    }
-  },
-  modules: [
-    '@nuxtjs/google-fonts',
-    '@nuxt/content',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
-    'nuxt-icon',
-  ],
-  colorMode: {
-    classSuffix: ''
-  },
+  compatibilityDate: '2024-11-01',
+  devtools: { enabled: true }
 })
